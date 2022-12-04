@@ -133,7 +133,8 @@
     <Content Include="Views\Aula\Index.cshtml" />
     <Content Include="Views\Aula\Detail.cshtml" />
     <Content Include="Views\Aula\Edit.cshtml" />
-    <Content Include="Views\Aula\Register.cshtml" />
+    <Content Include="Views\Aula\Create.cshtml" />
+    <Content Include="Views\Aula\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

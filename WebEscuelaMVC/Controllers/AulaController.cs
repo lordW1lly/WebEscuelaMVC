@@ -88,5 +88,30 @@ namespace WebEscuelaMVC.Controllers
             dynamic aulaNum = (from a in context.aulas where num == a.Numero select a).ToList();
             return View("Detail", aulaNum);
         }
+
+        //***ELIMINA UN AULA***
+        //GET
+        public ActionResult Delete(int id)
+        {
+            Aula aula = context.aulas.Find(id);
+            if (aula == null)
+            {
+                return HttpNotFound();
+            }
+            return View("Delete", aula);
+        }
+        [HttpPost]
+        //POST
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Aula aula = context.aulas.Find(id);
+            if (aula != null)
+            {
+                context.aulas.Remove(aula);
+                context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
