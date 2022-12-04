@@ -47,7 +47,7 @@ namespace WebEscuelaMVC.Controllers
 
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Detail(int id)
         {
             Aula aula = context.aulas.Find(id);
             if( aula == null )
